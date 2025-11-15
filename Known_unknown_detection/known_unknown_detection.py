@@ -53,13 +53,13 @@ if os.path.exists(known_faces_folder):
                     face_roi = cv2.resize(face_roi, (100, 100))
                     known_face_images.append(face_roi)
                     known_names.append(os.path.splitext(filename)[0])
-                    print(f"✅ Added face: {os.path.splitext(filename)[0]}")
+                    print(f"Added face: {os.path.splitext(filename)[0]}")
                 else:
-                    print(f"❌ No face detected in {filename}")
+                    print(f"No face detected in {filename}")
             else:
-                print(f"❌ Failed to load image: {filepath}")
+                print(f"Failed to load image: {filepath}")
 else:
-    print(f"❌ Folder not found: {known_faces_folder}")
+    print(f"Folder not found: {known_faces_folder}")
 
 print(f"Loaded {len(known_face_images)} known faces: {known_names}")
 print("Instructions:")
@@ -104,7 +104,7 @@ def capture_new_face(frame, face_roi, gray_roi):
         known_face_images.append(face_roi_resized)
         known_names.append(name)
 
-        print(f"✅ Face saved as '{name}' in {filepath}")
+        print(f"Face saved as '{name}' in {filepath}")
         print(f"Now {len(known_face_images)} known faces loaded")
         return True
     return False
@@ -116,7 +116,7 @@ while cam.isOpened():
 
     frame_count += 1
     if frame_count % 3 != 0:
-        continue  # প্রতি 3টি ফ্রেমের ১টিতে প্রসেস
+        continue  # Process every 3rd frame for efficiency
 
     timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
     gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
