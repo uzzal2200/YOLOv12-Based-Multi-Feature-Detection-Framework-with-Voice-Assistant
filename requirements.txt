@@ -1,0 +1,108 @@
+# ============================================================================
+# YOLOv12-Based Multi-Feature Detection Framework - Dependencies
+# For Visually Impaired Assistance System
+# ============================================================================
+
+# Python Version: 3.8+ (Recommended: 3.10)
+# Installation: pip install -r requirements.txt
+
+# ============================================================================
+# Core Dependencies
+# ============================================================================
+numpy>=1.21.0
+opencv-python>=4.5.0
+Pillow>=9.0.0
+
+# ============================================================================
+# Deep Learning & Object Detection
+# ============================================================================
+torch>=2.0.0
+torchvision>=0.15.0
+ultralytics>=8.0.0          # YOLOv12 framework
+
+# ============================================================================
+# Face Recognition
+# ============================================================================
+face_recognition>=1.3.0     # Includes dlib
+cmake>=3.18.0               # Required for dlib compilation (if needed)
+# Note: On Windows, you may need Visual Studio C++ Build Tools
+# Or install prebuilt wheel: pip install dlib-19.24.0-cp310-cp310-win_amd64.whl
+
+# ============================================================================
+# OCR (Optical Character Recognition)
+# ============================================================================
+pytesseract>=0.3.10
+easyocr>=1.6.0
+# Note: Tesseract-OCR must be installed separately on your system
+# Windows: https://github.com/UB-Mannheim/tesseract/wiki
+# Linux: sudo apt-get install tesseract-ocr
+# macOS: brew install tesseract
+
+# ============================================================================
+# Audio & Speech
+# ============================================================================
+gTTS>=2.3.0                 # Google Text-to-Speech for Bangla
+pydub>=0.25.0               # Audio processing
+# Note: pydub requires ffmpeg or libav
+# Windows: Download from https://ffmpeg.org/
+# Linux: sudo apt-get install ffmpeg
+# macOS: brew install ffmpeg
+
+# ============================================================================
+# Translation (Optional)
+# ============================================================================
+googletrans==4.0.0-rc1      # Google Translate API
+
+# ============================================================================
+# Utilities
+# ============================================================================
+openpyxl>=3.0.0             # Excel file handling for logs
+pathlib>=1.0.0              # Path operations (usually built-in)
+
+# ============================================================================
+# Additional Dependencies for Development (Optional)
+# ============================================================================
+# jupyter>=1.0.0            # For running notebooks
+# matplotlib>=3.5.0         # For visualizations
+# pandas>=1.4.0             # For data analysis
+# seaborn>=0.12.0           # For plotting
+
+# ============================================================================
+# System Requirements
+# ============================================================================
+# - Windows 10/11, Linux (Ubuntu 18.04+), or macOS 10.15+
+# - 4GB RAM minimum (8GB recommended)
+# - GPU (Optional): NVIDIA GPU with CUDA 11.7+ for faster inference
+# - Tesseract OCR: Must be installed separately
+# - FFmpeg: Required for audio playback
+
+# ============================================================================
+# Installation Instructions
+# ============================================================================
+# 1. Create virtual environment:
+#    conda create -n object python=3.10
+#    conda activate object
+#
+# 2. Install dependencies:
+#    pip install -r requirements.txt
+#
+# 3. Install system dependencies:
+#    - Tesseract OCR (for text detection)
+#    - FFmpeg (for audio playback)
+#
+# 4. For face_recognition on Windows (if issues):
+#    conda install -c conda-forge dlib
+#
+# 5. Verify installation:
+#    python -c "import cv2, torch, ultralytics; print('All dependencies installed!')"
+#
+# ============================================================================
+# Troubleshooting
+# ============================================================================
+# If you encounter issues with:
+# - dlib: Install via conda: conda install -c conda-forge dlib
+# - torch: Install with CUDA: pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
+# - face_recognition: Ensure dlib is installed first
+# - pytesseract: Make sure Tesseract-OCR is installed and in PATH
+#
+# ============================================================================
