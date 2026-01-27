@@ -1,232 +1,177 @@
-# YOLOv12-Based Multi-Feature Detection Framework with Voice Assistant for Enhanced Mobility and Independence of Visually Impaired Persons
-
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/downloads/)
-[![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-red.svg)](https://pytorch.org/)
-[![YOLOv12](https://img.shields.io/badge/YOLOv12-Ultralytics-green.svg)](https://github.com/ultralytics/ultralytics)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![IEEE Access](https://img.shields.io/badge/Submitted-IEEE%20Access-blue.svg)](https://ieeeaccess.ieee.org/)
-[![Status](https://img.shields.io/badge/Status-Active-success.svg)]()
-[![Maintenance](https://img.shields.io/badge/Maintained-Yes-green.svg)]()
+# YOLOv12-Based Multi-Feature Detection Framework with Voice Assistant
+## Enhanced Mobility and Independence for Visually Impaired Persons
 
 <div align="center">
-  <img src="https://img.shields.io/badge/Real--Time-Detection-orange" alt="Real-Time">
-  <img src="https://img.shields.io/badge/Voice-Assistant-blue" alt="Voice Assistant">
-  <img src="https://img.shields.io/badge/Accessibility-Focus-brightgreen" alt="Accessibility">
+
+[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg?style=flat-square&logo=python)](https://www.python.org/downloads/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red.svg?style=flat-square&logo=pytorch)](https://pytorch.org/)
+[![YOLOv12](https://img.shields.io/badge/YOLOv12-Latest-green.svg?style=flat-square&logo=opencv)](https://github.com/ultralytics/ultralytics)
+[![OpenCV](https://img.shields.io/badge/OpenCV-4.5+-5C3EE8.svg?style=flat-square&logo=opencv)](https://opencv.org/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
+[![Status](https://img.shields.io/badge/Status-Active-success.svg?style=flat-square)]()
+
+**Real-Time Multi-Modal Assistive Technology for Environmental Awareness**
+
+[📚 Features](#-key-features) • [⚡ Quick Start](#-quick-start) • [💾 Installation](#-installation--environment-setup) • [📊 Datasets](#-datasets) • [📖 Citation](#-citation)
+
 </div>
 
 ---
 
 ## 📋 Table of Contents
+
 - [Overview](#-overview)
 - [Key Features](#-key-features)
-- [System Architecture](#-system-architecture)
 - [Datasets](#-datasets)
 - [Models](#-models)
-- [Installation](#-installation)
-- [Quick Start](#-quick-start)
-- [Usage](#-usage)
-- [Performance Metrics](#-performance-metrics)
-- [Demo](#-demo)
+- [Installation & Environment Setup](#-installation--environment-setup)
 - [Project Structure](#-project-structure)
-- [Citation](#-citation)
-- [Contributors](#-contributors)
 - [License](#-license)
-- [Acknowledgments](#-acknowledgments)
 
 ---
 
 ## 🎯 Overview
 
-This repository contains the implementation of a **real-time multi-feature detection framework** designed to assist visually impaired persons in achieving enhanced mobility and independence. The system integrates **YOLOv12 object detection** with **multi-modal voice feedback**, providing comprehensive environmental awareness through:
+This repository presents a **real-time multi-feature detection framework** engineered to enhance mobility and foster independence for visually impaired individuals. The system orchestrates **three specialized YOLOv12 object detection models** with an **intelligent multimodal voice feedback system**, delivering comprehensive environmental awareness including:
 
-- 🚗 **Object Detection** - Real-time identification of common objects (Vehicle, Chair, Door, Man, Road, Stair, Table, Tree, Wall)
-- 💵 **Currency Recognition** - Bangladeshi currency note detection (1 Tk to 1000 Tk)
-- 🚶 **Footpath Safety Assessment** - Sidewalk occupancy detection (Free, Occupied, Partially Occupied, Unsafe)
+- 🚗 **Object Detection** - Real-time identification of environmental objects
+- 💵 **Currency Recognition** - Bangladeshi currency note denomination detection
+- 🚶 **Footpath Safety Assessment** - Sidewalk occupancy and safety evaluation
 - 👤 **Face Recognition** - Known/Unknown person identification
-- 📖 **Optical Character Recognition (OCR)** - Text detection with Bangla voice synthesis
+- 📖 **Optical Character Recognition** - Text detection with synthesized speech feedback
 
-### 🌟 Innovation Highlights
+### 🌟 Key Innovation Attributes
 
-- **Multi-Task Detection Framework**: Three specialized YOLOv12 models running concurrently
-- **Culturally Adapted**: Designed for Bangladeshi context (currency, language)
-- **Real-Time Performance**: Optimized for resource-constrained devices
-- **Audio-Based Interface**: Pre-recorded audio + dynamic Bangla text-to-speech
-- **User-Centric Design**: Interactive mode switching for personalized assistance
+✨ **Multi-Task Learning Architecture**: Three concurrent YOLOv12 models optimized for speed and accuracy
+🌏 **Culturally Contextualized**: Designed specifically for Bangladeshi currency and language support
+⚡ **Real-Time Performance**: 15-30 FPS optimized for real-world deployment
+🎙️ **Multimodal Feedback**: Hybrid pre-recorded + dynamic text-to-speech interface
+♿ **Accessibility-Centric**: User-friendly interactive mode switching
 
 ---
 
 ## 🚀 Key Features
 
-### Detection Modules
+### Detection Capabilities
 
-| Module | Classes | Audio Feedback | Purpose |
-|--------|---------|----------------|---------|
-| **Object Detection** | 9 classes | ✅ Pre-recorded | Environmental awareness |
-| **Currency Detection** | 9 denominations | ✅ Pre-recorded | Financial independence |
-| **Footpath Detection** | 4 conditions | ✅ Pre-recorded | Safe navigation |
-| **Face Recognition** | Known/Unknown | ✅ Pre-recorded | Social interaction |
-| **OCR** | English text | ✅ Generated speech | Information access |
+| Module | Detection Classes | Audio Output | Use Case |
+|--------|------------------|--------------|----------|
+| **Object Detection** | Vehicle, Chair, Door, Man, Road, Stair, Table, Tree, Wall (9 classes) | Pre-recorded MP3 | Environmental awareness |
+| **Currency Detection** | 1Tk - 1000Tk denominations (9 classes) | Pre-recorded MP3 | Financial independence |
+| **Footpath Safety** | Free/Occupied/Unsafe/Partial (4 classes) | Pre-recorded MP3 | Safe navigation |
+| **Face Recognition** | Known/Unknown persons | Pre-recorded MP3 | Social interaction |
+| **OCR Detection** | English text extraction | Dynamic Bangla gTTS | Information access |
 
-### Technical Features
-
-- ⚡ **Real-time Processing**: 15-30 FPS on standard hardware
-- 🎙️ **Multimodal Audio**: MP3 playback + gTTS synthesis
-- 🔄 **Dynamic Mode Switching**: Toggle detection modules on-the-fly
-- 🛡️ **Smart Cooldown**: Prevents audio spam (configurable)
-- 📊 **Performance Optimized**: Frame-based detection scheduling
-- 🔌 **Flexible Input**: Webcam or video file support
 
 ---
 
-## 🏗️ System Architecture
-
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    INPUT: Video Stream (Webcam/File)            │
-└───────────────────────────────┬─────────────────────────────────┘
-                                │
-                                ▼
-                    ┌───────────────────────┐
-                    │  Frame Preprocessing  │
-                    │  - BGR Normalization  │
-                    │  - 8-bit Conversion   │
-                    └───────────┬───────────┘
-                                │
-            ┌───────────────────┼───────────────────┐
-            │                   │                   │
-            ▼                   ▼                   ▼
-    ┌───────────────┐   ┌───────────────┐   ┌───────────────┐
-    │  YOLOv12 #1   │   │  YOLOv12 #2   │   │  YOLOv12 #3   │
-    │               │   │               │   │               │
-    │   Object      │   │   Currency    │   │   Footpath    │
-    │   Detection   │   │   Detection   │   │   Detection   │
-    │               │   │               │   │               │
-    │  (9 classes)  │   │ (9 classes)   │   │ (4 classes)   │
-    └───────┬───────┘   └───────┬───────┘   └───────┬───────┘
-            │                   │                   │
-            └───────────────────┼───────────────────┘
-                                │
-            ┌───────────────────┼───────────────────┐
-            │                   │                   │
-            ▼                   ▼                   ▼
-    ┌───────────────┐   ┌───────────────┐   ┌───────────────┐
-    │ Face          │   │  OCR Module   │   │ Audio Lookup  │
-    │ Recognition   │   │  (Tesseract)  │   │   Engine      │
-    │ (face_recog.) │   │               │   │               │
-    └───────┬───────┘   └───────┬───────┘   └───────┬───────┘
-            │                   │                   │
-            └───────────────────┼───────────────────┘
-                                │
-                                ▼
-                    ┌───────────────────────┐
-                    │  Audio Output Manager │
-                    │  - MP3 Playback       │
-                    │  - gTTS Synthesis     │
-                    │  - Cooldown Control   │
-                    └───────────┬───────────┘
-                                │
-                                ▼
-                    ┌───────────────────────┐
-                    │   Speaker/Headphone   │
-                    └───────────────────────┘
-```
-
----
 
 ## 📊 Datasets
 
-### 1. Object Detection Dataset
-- **Classes**: Vehicle, Chair, Door, Man, Road, Stair, Table, Tree, Wall (9 classes)
-- **Format**: YOLO annotation format
-- **Purpose**: Environmental awareness for navigation
+### Dataset 1: Custom Object Detection
+- **Source**: [Kaggle - Custom Object Detection Dataset](https://www.kaggle.com/datasets/uzzalhasan/custom-object-detection-dataset)
+- **Classes**: 9 objects (Vehicle, Chair, Door, Man, Road, Stair, Table, Tree, Wall)
+- **Format**: YOLO .txt annotation format
+- **Application**: General environmental object detection
 
-### 2. Bangladeshi Currency Dataset
-- **Classes**: 1 Tk, 2 Tk, 5 Tk, 10 Tk, 20 Tk, 50 Tk, 100 Tk, 500 Tk, 1000 Tk (9 classes)
-- **Format**: YOLO annotation format
-- **Context**: Bangladesh-specific currency recognition
+### Dataset 2: Bangladeshi Currency Detection
+- **Source**: [Kaggle - BD Currency Dataset](https://www.kaggle.com/datasets/uzzalhasan/bd-currency)
+- **Classes**: 10 denominations (1Tk, 2Tk, 5Tk, 10Tk, 20Tk, 50Tk, 100Tk, 200Tk, 500Tk, 1000Tk)
+- **Format**: YOLO .txt annotation format
+- **Application**: Currency denomination recognition for financial transactions
 
-### 3. Footpath Safety Dataset
-- **Classes**: Free for use, Fully Occupied, Not safe for use, Partially Occupied (4 classes)
-- **Format**: YOLO annotation format
-- **Purpose**: Navigation safety assessment
+### Dataset 3: Footpath Detection
+- **Source**: [Kaggle - Footpath Detection Dataset](https://www.kaggle.com/datasets/uzzalhasan/footpath-detection)
+- **Classes**: 4 conditions (Free for use, Fully Occupied, Not safe for use, Partially Occupied)
+- **Format**: YOLO .txt annotation format
+- **Application**: Sidewalk safety assessment for navigation
 
-### 4. Face Recognition Database
+### Dataset 4: Face Recognition Database
 - **Storage**: `Known_unknown_detection/known_faces_folder/`
-- **Format**: JPG/PNG images
-- **Method**: face_recognition library (dlib-based encodings)
+- **Format**: JPG/PNG image files
+- **Application**: Person identification and social interaction
 
 ---
 
-## 🤖 Models
+### 6. OCR Detection Module
 
-### YOLOv12 Architecture
-
-All three detection modules utilize **YOLOv12n (nano)** for optimal speed-accuracy tradeoff:
-
-| Model | Input Size | Parameters | Inference Speed | mAP@0.5 |
-|-------|-----------|------------|-----------------|---------|
-| Object Detection | 320×320 | ~3M | ~35 FPS | TBD |
-| Currency Detection | 320×320 | ~3M | ~35 FPS | TBD |
-| Footpath Detection | 320×320 | ~3M | ~35 FPS | TBD |
-
-**Model Files**: Located in respective `Save Model/best.pt` directories
-
-### Training Configuration
-
-```python
-# Model hyperparameters
-imgsz: 320          # Input image size
-conf: 0.35          # Confidence threshold
-max_det: 5          # Maximum detections per frame
-batch: 16           # Training batch size (typical)
-epochs: 100         # Training epochs
-optimizer: 'Adam'   # Optimization algorithm
+```bash
+python "OCR detection/OCR_Bangla_english.py"
 ```
 
 ---
 
-## 💻 Installation
+## 📁 Project Structure
 
-### Prerequisites
-
-- **Operating System**: Windows 10/11, Linux, macOS
-- **Python**: 3.8 or higher
-- **CUDA**: (Optional) CUDA 11.7+ for GPU acceleration
-- **Tesseract OCR**: Required for text detection
-
-### Step 1: Clone Repository
-
-```bash
-git clone https://github.com/yourusername/object-text-detection-for-visually-impaired.git
-cd object-text-detection-for-visually-impaired
+```
+object-text-detection-for-visually-impaired/
+│
+├── app.py                                    # Main real-time detection pipeline
+├── requirements.txt                          # Python dependencies
+├── LICENSE                                   # MIT License
+├── README.md                                 # This file
+├── .gitignore                                # Git ignore file
+│
+├── audio/                                    # Pre-recorded audio feedback files (26 files)
+│   ├── 1 tk.mp3, 2 taka.mp3, 5 tk.mp3, 10 Tk.mp3, 20 tk.mp3, 50 tk.mp3, 100 tk.mp3, 200 tk.mp3, 500 tk.mp3, 1000 tk.mp3  # Currency audio (10 files)
+│   ├── Vehicle.mp3, Chair.mp3, Door.mp3, Man.mp3, Road.mp3, Stair.mp3, Table.mp3, Tree.mp3, wall.mp3  # Object detection audio (9 files)
+│   ├── free for use.mp3, Fully Occupied .mp3, Partially Occupied .mp3, Not safe for use.mp3  # Footpath audio (4 files)
+│   ├── Known Face Uzzal .mp3, Unknown Face.mp3  # Face recognition audio (2 files)
+│   
+│
+├── Object detection Custom dataset/
+│   ├── custom_object_detection_with_yolov12n_pt.ipynb  # Training notebook
+│   └── Save Model/
+│       ├── best.pt                          # Best trained YOLOv12 model
+│       └── last.pt                          # Last checkpoint
+│
+├── Bangladesh Currency Detection/
+│   ├── Bangladeshi_Currency_detection_with_yolov12n_pt.ipynb  # Training notebook
+│   └── Save Model/
+│       └── best.pt                          # Trained currency detection model
+│
+├── Footpath Detection/
+│   ├── Footpath_detection_yolov12n_pt.ipynb  # Training notebook
+│   └── Save Model/
+│       └── best.pt                          # Trained footpath detection model
+│
+├── Known_unknown_detection/
+│   ├── known_unknown_detection.py           # Face recognition detection script
+│   ├── evaluation_metrices.py               # Evaluation metrics for face detection
+│   ├── known_faces_folder/                  # Database of known person face images
+│   └── .venv/                               # Virtual environment
+│
+├── OCR detection/
+│   ├── OCR_Bangla_english.py                # OCR text detection script
+│   ├── evaluation_metrices.py               # Evaluation metrics for OCR
+│   └── __pycache__/                         # Python cache files
+│
+├── .git/                                     # Git version control repository
+│
+└── YOLOv12_Based_Multi_Feature_Detection...pdf  # Research paper PDF
 ```
 
-### Step 2: Create Virtual Environment
+---
 
-```bash
-# Using conda (recommended)
-conda create -n object python=3.10
-conda activate object
 
-# Or using venv
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-# or
-.\venv\Scripts\activate  # Windows
+## 📜 License
 
-- Run the simple face detector (Known/Unknown):
+This project is licensed under the MIT License - see [LICENSE](LICENSE) file for details.
 
-```powershell
-python Known_unknown_detection\known_unknown_detection.py
-```
+---
 
-Customizing model paths
------------------------
-Edit `app.py` and change the path passed to `YOLO()` to the actual location of your `.pt` model file in the repository (or an absolute path). Example:
+## 🙏 Acknowledgments
 
-```python
-# inside app.py
-model = YOLO('Footpath Detection/best.pt')
-```
+- **Ultralytics** for YOLOv12 framework
+- **dlib** community for face recognition
+- **Tesseract-OCR** project for text detection
+- **Kaggle** for dataset resources
+- **Open source community** for PyTorch, OpenCV, and other dependencies
 
-Object-text-detection-for-visually-impaired
+---
+
+## 📞 Support & Contribution
+
+For issues, feature requests, or contributions, please open an issue or submit a pull request on GitHub.
+
+**Last Updated**: January 27, 2026
