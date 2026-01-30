@@ -1,5 +1,5 @@
-# YOLOv12-Based Multi-Feature Detection Framework with Voice Assistant
-## Enhanced Mobility and Independence for Visually Impaired Persons
+# A YOLOv12–ViT Hybrid-Based Multi-Feature Detection Framework with Voice Assistant 
+## for Enhanced Mobility and Independence of Visually Impaired Persons
 
 <div align="center">
 
